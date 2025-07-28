@@ -10,8 +10,12 @@
       sddm = {
         enable = true;
         wayland.enable = true;
+        theme = "Dracula";
       };
     };
+    blueman = {
+      enable = true;
+    }; 
   };
 }
  

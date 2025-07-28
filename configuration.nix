@@ -21,7 +21,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-
+  nixpkgs.config.allowUnfree = true;
+  
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   #environment.systemPackages = with pkgs; [

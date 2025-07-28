@@ -2,15 +2,11 @@
   programs = {
     hyprland = {
       enable = true;
-      xwayland = {
-        enable = true;
-      };
+      xwayland.enable = true;
+      withUWSM = true;
     };
-    firefox = {
-      enable = true;
-    };
-    thunar = {
-      enable = true;
-    };
+    uwsm.enable = true;
+    firefox.enable = true;
+    thunar.enable = true;
   };
 }
