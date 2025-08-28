@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -15,6 +15,7 @@
       ./users.nix
       ./environment.nix
       ./fonts.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -22,7 +23,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs.config.allowUnfree = true;
-  
+ 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+ 
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
